@@ -6,20 +6,23 @@ public class Lion {
 
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
+    // Создали в классе Lion приватное поле типа FelineAnimal теперь объект FelineAnimal — это поле класса Lion
+    private FelineAnimal felineAnimal;
+    // Объект передаётся в конструктор. Он создан извне класса
+    public Lion(String sex, FelineAnimal felineAnimal) throws Exception {
+
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
+        this.felineAnimal = felineAnimal;
     }
 
-    Feline feline = new Feline();
-
     public int getKittens() {
-        return feline.getKittens();
+        return felineAnimal.getKittens(1);
     }
 
     public boolean doesHaveMane() {
@@ -27,6 +30,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return felineAnimal.getFood("Хищник");
     }
 }
