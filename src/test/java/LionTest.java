@@ -1,5 +1,6 @@
 import com.example.FelineAnimal;
 import com.example.Lion;
+import org.junit.Assert;
 import org.junit.Test;
 import java.util.List;
 
@@ -27,10 +28,17 @@ public class LionTest {
         assertEquals(expectedFood, actualFood);
     }
 
-    @Test(expected = Exception.class)
-    public void testLionThrowsExceptionForInvalidSex() throws Exception {
+    @Test
+    public void testLionThrowsExceptionForInvalidSex() {
         FelineAnimal mockFelineAnimal = mock(FelineAnimal.class);
-        new Lion("Неизвестный пол", mockFelineAnimal);
+
+        try {
+            new Lion("Неизвестный пол", mockFelineAnimal);
+            Assert.fail("Ожидалось исключение при неверном поле, но конструктор выполнился успешно");
+        } catch (Exception e) {
+            assertEquals("Используйте допустимые значения пола животного - самец или самка",
+                    e.getMessage());
+        }
     }
 
 }
