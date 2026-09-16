@@ -1,4 +1,4 @@
-import com.example.FelineAnimal;
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,7 +33,7 @@ public class LionTestParameters {
 
         @Test
         public void testHasManeBasedOnSex() throws Exception {
-            FelineAnimal mockFeline = mock(FelineAnimal.class);
+            Feline mockFeline = mock(Feline.class);
             Lion lion = new Lion(sex, mockFeline);
 
 

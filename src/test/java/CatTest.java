@@ -1,5 +1,5 @@
 import com.example.Cat;
-import com.example.Predator;
+import com.example.Feline;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,13 +16,13 @@ import static org.mockito.Mockito.when;
 public class CatTest {
 
     @Mock
-    Predator predator;
+    Feline feline;
 
     private Cat cat;
 
     @Before
     public void setUp() {
-        cat = new Cat(predator);
+        cat = new Cat(feline);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class CatTest {
     @Test
     public void testCatEatMeat() throws Exception {
 
-        when(predator.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> food = cat.getFood();
 
         assertEquals(List.of("Животные", "Птицы", "Рыба"), food);

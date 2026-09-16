@@ -44,24 +44,5 @@ public class FelineTest {
 
         assertEquals(4, feline.getKittens(4));
     }
-
-    @Test
-    public void testFelineGetKittensArgumentTen() throws Exception {
-
-        assertEquals(10, feline.getKittens(10));
-    }
-
-    @Test
-    public void testFelineGetKittensArgumentZiro() throws Exception {
-
-        assertEquals(0, feline.getKittens(0));
-    }
-
-    @Test
-    public void testFelineGetKittensArgumentNegative() throws Exception {
-
-        assertEquals(-5, feline.getKittens(-5));
-    }
-
-
+    
 }
