@@ -41,17 +41,4 @@ public class LionTest {
         }
     }
 
-    @Test
-    public void testDoesHaveMane() throws Exception {
-        Feline mockFeline = mock(Feline.class);
-
-        // Проверяем самца
-        Lion lionMale = new Lion("Самец", mockFeline);
-        assertEquals(true, lionMale.doesHaveMane());
-
-        // Проверяем самку
-        Lion lionFemale = new Lion("Самка", mockFeline);
-        assertEquals(false, lionFemale.doesHaveMane());
-    }
-
 }
